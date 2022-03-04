@@ -202,11 +202,36 @@ void operateTwoMatrices(MyMatrix my_matrix, char op) {
 	}	
 }
 
-void scalarMul(MyMatrix my_matrix) {
+void scalarMul(MyMatrix my_matrix, char op) {
 	/*
 	* handle the multipication by scalar (left and right)
-	* get the matrix and scalar and return None
+	* get the matrix and left/right and return None
 	*/
+	double scalar;
+	bool done = false;
+	while (!done) {
+		cout << "Enter the scalar you want to multiply by:" << endl;
+		if (cin >> scalar) // valid input
+			done = true;
+		else {
+			cout << "Invalid." << endl;
+			cin.clear();
+			while (cin.get() != '\n'); // empty loop
+		}
+	}
+
+	// calc
+	MyMatrix output_matrix;
+	if (op == 'l') {  // mul from left
+		output_matrix = scalar * my_matrix;
+		cout << "\nSuccessfully added the matrices! Here is the multiplication result:" << endl;
+		cout << output_matrix;
+	}
+	else {  // mul from right
+		output_matrix = my_matrix * scalar;
+		cout << "\nSuccessfully added the matrices! Here is the multiplication result:" << endl;
+		cout << output_matrix;
+	}
 }
 
 int main() {
@@ -266,8 +291,10 @@ int main() {
 				operateTwoMatrices(matrix, '*');
 				break;
 			case 5: // mul scal left
+				scalarMul(matrix, 'l');
 				break;
 			case 6:  // mul scal right
+				scalarMul(matrix, 'r');
 				break;
 			case 7:  // comp
 				break;
