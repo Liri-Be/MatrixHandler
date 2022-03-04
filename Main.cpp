@@ -113,7 +113,7 @@ bool isNumber(string input) {
 	return true;
 }
 
-void assignMatrix(MyMatrix my_matrix) {
+void assignMatrix(MyMatrix& my_matrix) {
 	/*
 	* handle the assign matrix action
 	* get and return None
@@ -234,6 +234,58 @@ void scalarMul(MyMatrix my_matrix, char op) {
 	}
 }
 
+void compMatrix(MyMatrix my_matrix) {
+	/*
+	* handle the compartion of 2 matrices
+	* get the user's matrix and return None
+	*/
+	MyMatrix new_matrix;
+	cout << "Enter a matrix to compare your matrix to:" << endl;
+	cin >> new_matrix;
+	if (new_matrix == my_matrix)
+		cout << "They are the same!" << endl;
+	else
+		cout << "They are diffrent!" << endl;
+}
+
+void indexMatrix(MyMatrix my_matrix) {
+	/*
+	* take input - index in the matrix, and print the value of the matrix in this index
+	* get the user matrix and return None
+	*/
+	int row, col;
+	bool done = false;
+	while (!done) {
+		cout << "Enter the row:" << endl;
+		if (cin >> row) // valid input
+			done = true;
+		else {
+			cout << "Invalid." << endl;
+			cin.clear();
+			while (cin.get() != '\n'); // empty loop
+		}
+	}
+	done = false;
+	cin.clear();
+	while (!done) {
+		cout << "Enter the col:" << endl;
+		if (cin >> col) // valid input
+			if (col < my_matrix.getN())
+				done = true;
+		else {
+			cout << "Invalid." << endl;
+			cin.clear();
+			while (cin.get() != '\n'); // empty loop
+		}
+	}
+	try {
+		cout << "The value is: " << my_matrix[row][col] << endl;
+	}
+	catch (const char* error) {
+		cout << error << endl;
+	}
+}
+
 int main() {
 	bool done = false;
 	// initilize
@@ -297,12 +349,17 @@ int main() {
 				scalarMul(matrix, 'r');
 				break;
 			case 7:  // comp
+				compMatrix(matrix);
 				break;
 			case 8:  // index
+				indexMatrix(matrix);
 				break;
 			case 9:  // cast
+				cout << "\nHere is the cast result: " << double(matrix) << endl;
 				break;
 			case 10:  // print
+				cout << "\nHere is your matrix:" << endl;
+				cout << matrix;
 				break;
 			default:  // not valid number
 				cout << "Invalid." << endl;
