@@ -15,7 +15,27 @@ The program uses the ideas of OOP, operator overloading, and friend functions to
 
 ## MyMatrix.h
 The deleration of the class - MyMatrix and each methods in the class, and the friend functions.
+### MyMarix class
 The class MyMatrix is handling all the matrix operators.
+#### Members of the class (private)
+1. the matrix (double**)
+2. number of rows (int)
+3. number of columns (int) 
+
+#### Private methods
+1. setters.
+2. delete matrix.
+
+#### Public methods
+1. Constarctors (regular, copy and defualt).
+2. Destructor.
+3. getters.
+4. operators (+, -, *, =, ==, [], double())
+
+#### Friend functions
+1. operator * - multiply by scalar from the right.
+2. operator << - cout.
+3. operator >> - cin.
 
 ## MyMatrix.cpp
 The code of the methods and friend functions of MyMatrix class.
