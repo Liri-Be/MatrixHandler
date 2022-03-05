@@ -10,4 +10,4 @@ Program for handling matrix operations -
 8. Cast to double (get the sum of the values in the matrix).  
 
 The program supports taking matrix as input with ```std::cin``` and printing matrix with ```std::cout```.  
-The program uses the ideas of OOP, operator overloading, and friend methods to enable the use of the operators from the right.
+The program uses the ideas of OOP, operator overloading, and friend functions to enable the use of the operators from the right.
