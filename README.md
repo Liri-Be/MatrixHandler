@@ -11,31 +11,32 @@ Program for handling matrix operations -
 8. Cast to double (get the sum of the values in the matrix).  
 
 The program supports taking matrix as input with ```std::cin``` and printing matrix with ```std::cout```.  
-The program uses the ideas of OOP, operator overloading, and friend functions to enable the use of the operators from the right.
+The program uses the ideas of OOP, operator overloading, and friend functions to enable the use of the operators from the right.'
 
-## MyMatrix.h
-The deleration of the class - MyMatrix and each methods in the class, and the friend functions.
-### MyMarix class
+## MyMarix class
 The class MyMatrix is handling all the matrix operators.
-#### Members of the class (private)
+### Members of the class (private)
 1. the matrix (double**)
 2. number of rows (int)
 3. number of columns (int) 
 
-#### Private methods
+### Private methods
 1. setters.
 2. delete matrix.
 
-#### Public methods
+### Public methods
 1. Constarctors (regular, copy and defualt).
 2. Destructor.
 3. getters.
 4. operators (+, -, *, =, ==, [], double())
 
-#### Friend functions
+### Friend functions
 1. operator * - multiply by scalar from the right.
 2. operator << - cout.
 3. operator >> - cin.
+
+## MyMatrix.h
+The deleration of the class - MyMatrix and each methods in the class, and the friend functions.
 
 ## MyMatrix.cpp
 The code of the methods and friend functions of MyMatrix class.
